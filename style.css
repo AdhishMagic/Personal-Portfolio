@@ -98,7 +98,8 @@ p{
     transition: .3s;
 }
 
-.nav-list li:hover .tool-tip{
+.nav-list li:hover .tool-tip,
+a:hover .tool-tip {
     visibility: visible;
     opacity: 1;
 }
@@ -116,7 +117,7 @@ p{
     height: 100%;
     transform-style: preserve-3d;
     transform-origin: 50% 50% -50vw;
-    transform: rotateY(0deg);
+    transform: rotateY(-90deg);
 }
 
 .section{
@@ -128,7 +129,15 @@ p{
     backface-visibility: hidden;
 }
 
-.home{
+.section:nth-child(even){
+    background: var(--secondary-bg-color);
+}
+
+.section.about{
+    transform: translateX(50vw) translateZ(-50vw) rotateY(90deg);
+}
+
+.home, .about{
     display: flex;
     align-items: center;
     gap: 5rem;
@@ -217,4 +226,32 @@ p{
     right: 2.5rem;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.img-box.about-img{
+    background: transparent;
+    box-shadow: 0 0 2rem var(--main-color), inset 0 0 1rem var(--main-color);
+}
+
+.img-box.about-img img{
+    z-index: -1;
+}
+
+.title{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.about-info .title{
+    text-align: left;
+}
+
+.about-info h3{
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin: -1rem;
+}
+
+.about-info .btn{
+    padding: 1.2rem 4rem;
 }
